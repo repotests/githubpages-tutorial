@@ -13,5 +13,4 @@ script:
   - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
   - cd docs/website
   - yarn install
-  - echo GH_NAME
-  - GIT_USER=lucasca73 yarn run publish-gh-pages
+  - GIT_USER="$GH_NAME" yarn run publish-gh-pages
