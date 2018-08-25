@@ -1,37 +1,14 @@
-sudo: required
-
-addons:
-  apt:
-    packages:
-      # Gotta stay updated
-      - git-all
-
+# .travis.yml
+language: node_js
+node_js:
+  - '8'
 branches:
   only:
     - master
-    - /^[0-9].[0-9].[0-9].*/
-
-language: node_js
-node_js:
-  - "8"
-
 cache:
-  timeout: 600
-  directories:
-    - node_modules
-
-install:
-  - npm install -g yarn
-  - yarn install --force
-
-before_script:
-  - yarn global add cross-env typescript ts-node rimraf
-
+  yarn: true
 script:
   - git config --global user.name "${GH_NAME}"
   - git config --global user.email "${GH_EMAIL}"
   - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
   - cd docs/website && yarn install && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
-
-after_failure:
-  - echo No post-failure script exists
