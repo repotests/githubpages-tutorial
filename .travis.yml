@@ -13,7 +13,7 @@ script:
   - git config --global user.name "${GH_NAME}"
   - git config --global user.email "${GH_EMAIL}"
   - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-  - npm i yarn
+  - npm install yarn -g
   # - yarn install
   - yarn global add docusaurus-init && npm install --global docusaurus-init
   - cd docs/website
