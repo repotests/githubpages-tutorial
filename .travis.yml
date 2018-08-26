@@ -1,14 +1,29 @@
 # .travis.yml
+sudo: required
+
 language: node_js
+
+services:
+  - docker
+
 node_js:
   - '8'
 branches:
   only:
     - master
+
 cache:
   yarn: true
+
+before_install:
+- docker pull lucascst/gh-pages-docker-travis
+- docker run -d -p 3000:3000 lucascst/gh-pages-docker-travis bash
+- docker ps -a
+# - docker run lucascst/gh-pages-docker-travis bash -c "cd /app/docs; bundle exec rake test"
+
 script:
   - git config --global user.name "${GH_NAME}"
   - git config --global user.email "${GH_EMAIL}"
   - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-  - cd docs/website && yarn install && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
+  - cd docs/website && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
+
