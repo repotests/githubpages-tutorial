@@ -24,12 +24,12 @@ const siteConfig = {
   title: 'Test Site', // Title for your website.
   tagline: 'A website for testing',
   //Production
-  // url: 'https://repotests.github.io/githubpages-tutorial/', // Your website URL
-  // baseUrl: '/githubpages-tutorial/', // Base URL for your project */
+  url: 'https://repotests.github.io/githubpages-tutorial/', // Your website URL
+  baseUrl: '/githubpages-tutorial/', // Base URL for your project */
 
   //Development
-  url: 'https://localhost:3000/', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  // url: 'https://localhost:3000/', // Your website URL
+  // baseUrl: '/', // Base URL for your project */
 
   // Used for publishing and more
   projectName: 'githubpages-tutorial',

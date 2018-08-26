@@ -16,7 +16,7 @@ cache:
   yarn: true
 
 before_install:
-- docker pull lucascst/gh-pages-docker-travis
+  - docker pull lucascst/gh-pages-docker-travis
 
 script:
   - docker run lucascst/gh-pages-docker-travis bash -c "sh publish.sh"
