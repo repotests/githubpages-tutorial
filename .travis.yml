@@ -17,10 +17,9 @@ cache:
 
 before_install:
 - docker pull lucascst/gh-pages-docker-travis
-- docker run -d -p 3000:3000 lucascst/gh-pages-docker-travis bash
-- docker ps -a
 # - docker run lucascst/gh-pages-docker-travis bash -c "cd /app/docs; bundle exec rake test"
 
 script:
-  - docker run lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"
+  - docker run lucascst/gh-pages-docker-travis bash -c "cd docs; ls; sh publish.sh"
+  - docker ps -a
 
