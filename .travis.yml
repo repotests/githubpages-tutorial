@@ -22,8 +22,5 @@ before_install:
 # - docker run lucascst/gh-pages-docker-travis bash -c "cd /app/docs; bundle exec rake test"
 
 script:
-  - git config --global user.name "${GH_NAME}"
-  - git config --global user.email "${GH_EMAIL}"
-  - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-  - cd docs/website && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
+  - docker run lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"
 
