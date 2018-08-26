@@ -1,6 +1,8 @@
 source .env
-cat .env
-echo "Hello WORLD!"
+echo $GH_NAME
+echo $GH_EMAIL
+echo $GH_TOKEN
+echo " ** ** Begining build..."
 cd website
 git config --global user.name "${GH_NAME}"
 git config --global user.email "${GH_EMAIL}"

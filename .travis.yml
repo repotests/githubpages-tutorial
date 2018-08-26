@@ -20,5 +20,8 @@ before_install:
 
 script:
   - env >> docs/.env
+  - echo "export GH_NAME" >> docs/.env
+  - echo "export GH_EMAIL" >> docs/.env
+  - echo "export GH_TOKEN" >> docs/.env
   - docker run -v `pwd`:"/app" -w "/app" lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"
 
