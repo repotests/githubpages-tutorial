@@ -1,4 +1,3 @@
-bash -c "source .env"
 echo $GH_NAME
 echo $GH_EMAIL
 echo $GH_TOKEN
