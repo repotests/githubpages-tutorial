@@ -5,4 +5,6 @@ authorURL: http://twitter.com/ericnakagawa
 authorFBID: 661277173
 ---
 
+Chiko was here!
+
 This blog post will test file name parsing issues when periods are present.
