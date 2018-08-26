@@ -19,5 +19,5 @@ before_install:
   - docker pull lucascst/gh-pages-docker-travis
 
 script:
-  - docker run lucascst/gh-pages-docker-travis bash -c "sh publish.sh"
+  - docker run -v `pwd`:"/app" -w "/app" lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"
 
