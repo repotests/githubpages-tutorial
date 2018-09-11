@@ -1,4 +1,4 @@
-https://travis-ci.org/repotests/githubpages-tutorial.png?branch=master
+TravisCI ![build passing](https://travis-ci.org/repotests/githubpages-tutorial.png?branch=master)
 
 https://travis-ci.org/repotests/githubpages-tutorial 
 
