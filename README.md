@@ -3,6 +3,6 @@
 ![build passing](https://travis-ci.com/repotests/githubpages-tutorial.png?branch=master)
 
 
-Hello Pages!
+Hello Pages!!
 
 Repo for github testing features
