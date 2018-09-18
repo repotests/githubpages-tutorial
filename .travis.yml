@@ -23,5 +23,5 @@ script:
   - echo "GH_EMAIL=${GH_EMAIL}" >> docs/.env
   - echo "GH_TOKEN=${GH_TOKEN}" >> docs/.env
   - cat docs/.env
-  - if [ ${TRAVIS_PULL_REQUEST} = 'true' ]; docker run -v `pwd`:"/app" -w "/app" --env-file docs/.env lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"; fi
+  - if [ ${TRAVIS_PULL_REQUEST} = 'true' ]; then docker run -v `pwd`:"/app" -w "/app" --env-file docs/.env lucascst/gh-pages-docker-travis bash -c "cd docs; sh publish.sh"; fi
 
